@@ -10,6 +10,11 @@ contract Lottery {
         manager = msg.sender;
     }
 
+    function join() public payable {
+        require(msg.value == 0.1 ether, "Insufficient fund");
+        players.push(payable(msg.sender));
+    }
+
     receive() external payable {
         require(msg.value == 0.1 ether, "Insufficient fund");
         players.push(payable(msg.sender));

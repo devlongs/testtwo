@@ -18,8 +18,10 @@ const config: HardhatUserConfig = {
       },
     },
     goerli: {
-      url: URL,
-      accounts: [PRIVATE_KEY],
+      url: "https://eth-goerli.g.alchemy.com/v2/raG07qO50AvVnKl_D7-VXeo29hd-co-F",
+      accounts: [
+        "17a7c7bb9c244cdf24dfa694e0f6a4e7a45e669c5e07fd4aaba4f5735137f3c0",
+      ],
     },
   },
 };
