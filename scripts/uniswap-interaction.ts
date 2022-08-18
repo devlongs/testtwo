@@ -41,7 +41,7 @@ async function main() {
   //     Math.floor(Date.now() / 1000) + 60 * 10
   //   );
 
-  const res = await ROUTER.addLiquidity(
+  const addLiquidity = await ROUTER.addLiquidity(
     USDCAddress,
     DAIAddress,
     ethers.utils.parseUnits("10", "18"),
@@ -52,12 +52,16 @@ async function main() {
     Math.floor(Date.now() / 1000) + 60 * 10
   );
 
-  // let [a, b, c ] = res;
-
-  //   const usdtBalAfter = await USDC.balanceOf(USDCHolder);
-  //   const daiBalAfter = await DAI.balanceOf(USDCHolder);
-
-  //   console.log("balance after swap", usdtBalAfter, daiBalAfter);
+  const removeLiquidity = await ROUTER.addLiquidity(
+    USDCAddress,
+    DAIAddress,
+    ethers.utils.parseUnits("10", "18"),
+    ethers.utils.parseUnits("10", "18"),
+    ethers.utils.parseUnits("10", "18"),
+    ethers.utils.parseUnits("10", "18"),
+    USDCHolder,
+    Math.floor(Date.now() / 1000) + 60 * 10
+  );
 }
 
 main().catch((error) => {
