@@ -26,20 +26,9 @@ async function main() {
 
   await USDC.approve(UNIRouter, amountOut);
 
-  //   bal
+
   const usdcBal = await USDC.balanceOf(USDCHolder);
   const daiBal = await DAI.balanceOf(USDCHolder);
-
-  //   console.log("USDC before swap", usdcBal);
-  //   console.log("DAI before swap", daiBal);
-
-  //   await ROUTER.swapTokensForExactTokens(
-  //     amountOut,
-  //     ethers.utils.parseUnits("1980", "18"),
-  //     [USDCAddress, DAIAddress],
-  //     USDCHolder,
-  //     Math.floor(Date.now() / 1000) + 60 * 10
-  //   );
 
   const addLiquidity = await ROUTER.addLiquidity(
     USDCAddress,
